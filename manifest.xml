@@ -1,14 +1,15 @@
 <?xml version="1.0" ?>
 <manifest>
-	<remote fetch="." name="origin" />
+  <remote fetch="https://github.com/vivoblueos/" name="origin" />
+	<remote fetch="git@github.com:KMiri-rs/" name="my" />
 	<default remote="origin" revision="main"/>
 	<project name="apps_example" path="apps/example"/>
 	<project name="apps_shell" path="apps/shell"/>
 	<project name="book" path="book"/>
-	<project name="kernel" path="kernel"/>
+  <project name="kernel" path="kernel" remote="my/vivoblueos-kernel" upstream="origin/kernel" />
 	<project name="libc" path="libc" revision="blueos-dev"/>
 	<project name="librs" path="librs"/>
-	<project name="build" path="build">
+  <project name="build" path="build" remote="my/vivoblueos-build" upstream="origin/build" >
 		<linkfile dest=".gn" src="toplevel/.gn"/>
 		<linkfile dest="BUILD.gn" src="toplevel/BUILD.gn"/>
 	</project>
